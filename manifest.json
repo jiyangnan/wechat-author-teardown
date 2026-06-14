@@ -1,0 +1,33 @@
+{
+  "name": "wechat-author-teardown",
+  "version": "1.0.0",
+  "owner": "Aries Warrior Flamenco",
+  "updated_at": "2026-06-14",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "active",
+  "category": "content-research",
+  "complexity_tier": "complex",
+  "summary": "公众号博主拆解全流程：采集归档 → 数据分析 → 方法论拆解 → HTML 看板 → 可复用写作组件，可选回流知识库。配置外置 + 引擎抽象 + doctor 自检 + CONTRACT 冒烟，可跨 agent/跨机器移植。",
+  "target_platforms": ["claude", "openai", "generic"],
+  "entrypoint": "SKILL.md",
+  "onboarding": ["scripts/doctor.sh", "scripts/smoke_test.sh"],
+  "config": "config.example.env",
+  "factory_components": ["scripts", "references", "config"],
+  "scripts": {
+    "doctor.sh": "依赖与引擎体检",
+    "smoke_test.sh": "CONTRACT 验收（跑1个真实链接全链路）",
+    "archive_batch.sh": "批量采集归档（枚举+逐篇抓取）",
+    "enumerate.py": "合集 API 枚举博主文章+翻往期",
+    "lib.sh": "抓取引擎抽象（browse/manual）",
+    "html2md.py": "正文 HTML→Markdown + 图片本地化（纯，可移植）",
+    "analyze.py": "轻量语料分析（纯标准库，无 jieba）",
+    "render_dashboard.py": "自包含 HTML 看板（纯，无 jinja2）",
+    "config.sh": "配置加载器"
+  },
+  "fetch_engines": ["browse", "requests", "manual"],
+  "hard_deps": ["python3", "beautifulsoup4", "markdownify", "requests", "jq"],
+  "primary_outputs": ["markdown", "html", "json"],
+  "optional_integrations": ["obsidian (config.env: OBSIDIAN_ENABLED)"],
+  "compliance": "个人学习研究用途；尊重原作者版权，不洗稿/不商用；内置抓取节流"
+}
