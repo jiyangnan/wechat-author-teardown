@@ -4,9 +4,18 @@
 
 > 一个微信公众号文章链接 → 这个博主的全套归档 + 方法论报告 + 数据看板 + 可复用写作组件。
 
-![方法论看板示例](docs/dashboard-demo.png)
+<table>
+<tr>
+<td width="50%"><img src="docs/dashboard-demo.png" alt="看板示例 1"></td>
+<td width="50%"><img src="docs/dashboard-demo-kazik.png" alt="看板示例 2"></td>
+</tr>
+<tr>
+<td align="center"><sub>博主 A · AI 工具/Agent 垂直（20 篇，~20 图/篇）</sub></td>
+<td align="center"><sub>博主 B · AI 绘图/视觉垂直（20 篇，~30 图/篇）</sub></td>
+</tr>
+</table>
 
-<sub>↑ 自动生成的 HTML 方法论看板（示例：对某公开公众号 20 篇的拆解，含概览 KPI、关键词画像、标题模式、文章结构；下方还有金句墙与可复用写作组件，图中略）。</sub>
+<sub>↑ 同一套 skill 对两个不同垂直的公众号各跑一遍，自动生成的 HTML 方法论看板（含概览 KPI、关键词画像、标题模式、文章结构；下方还有金句墙与可复用写作组件，图中略）。两个号画像截然不同，却收敛出同一套打法——这正是工具的价值。</sub>
 
 ## 它做什么
 1. **采集归档**：识别博主 → 合集 API 枚举近期 N 篇（自动翻往期）→ 逐篇正文转 Markdown + 图片本地化。
